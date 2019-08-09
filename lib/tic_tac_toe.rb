@@ -81,7 +81,9 @@ def move(board, index, character)
 end 
 
 def winner(board)
-  if won?(board) == true
-    board[won?(board)[1]]
+  if winning_combo = won?(board)
+    board[winning_combo.first]
   end 
 end
+
+
