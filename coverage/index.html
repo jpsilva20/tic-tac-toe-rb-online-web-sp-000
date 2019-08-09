@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-09T06:59:18+00:00">2019-08-09T06:59:18+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-09T07:00:59+00:00">2019-08-09T07:00:59+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -53,7 +53,7 @@
       <tr>
         <td class="strong"><a href="#3922fc1c887d806e127e7a4b375608c39a90bf69" class="src_link" title="lib/tic_tac_toe.rb">lib/tic_tac_toe.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>88</td>
+        <td>83</td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
@@ -387,13 +387,13 @@
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">  input = gets.strip</code>
+          <code class="ruby">  user_input = gets.strip</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">  index = input_to_index(input)</code>
+          <code class="ruby">  index = input_to_index(user_input)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
@@ -477,43 +477,43 @@
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">  turn_number = turn_count(board)</code>
+          <code class="ruby">  turn_count(board).even? ? &quot;X&quot; : &quot;O&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">  if turn_number % 2 == 0  </code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">    return &quot;X&quot;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">  else </code>
+          <code class="ruby">def turn_count(board)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">    return &quot;O&quot;</code>
+          <code class="ruby">  board.count {|token| token == &quot;X&quot; or token == &quot;O&quot;}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">  end </code>
+          <code class="ruby">end </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
@@ -525,13 +525,13 @@
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">def turn_count(board)</code>
+          <code class="ruby">def move(board, index, character)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">  board.count {|token| token == &quot;X&quot; or token == &quot;O&quot;</code>
+          <code class="ruby">  board[index] = character</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
@@ -549,70 +549,40 @@
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">def winner(board)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">def move(board, index, character)</code>
+          <code class="ruby">  if winning_combo = won?(board)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">  board[index] = character</code>
+          <code class="ruby">    board[winning_combo.first]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">end </code>
+          <code class="ruby">  end </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">def winner(board)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby">  if winning_combo = won?(board)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
-          
-          
-          <code class="ruby">    board[winning_combo.first]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="85">
-          
-          
-          <code class="ruby">  end </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="86">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="87">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="83">
           
           
           <code class="ruby"></code>
