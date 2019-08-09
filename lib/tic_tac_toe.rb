@@ -28,11 +28,23 @@ def valid_move?(board, index)
 end
 
 def turn_count(board)
-  board.count {|token| token == "X" or token == "O"}
+  turn = 0 
+  board.each do |index|
+    if index == "X" or index == "O"
+      turn += 1
+    end 
+  end 
+  return turn
 end 
 
 def current_player(board)
-  turn_count(board).even? ? "X" : "O"
+  num_turns = turn_count(board)
+  if num_turns % 2 == 0 
+    player = "X"
+  else 
+    player = "O"
+  end 
+  return player 
 end
 
 def turn(board)
@@ -49,7 +61,7 @@ end
 
 
 def won?(board)
-  WIN_COMBINATIONS.detect do |combo|
+  WIN_COMBINATIONS.detec do |combo|
     board[combo[0]] == board[combo[1]] &&
       board[combo[1]] == board[combo[2]] &&
       position_taken?(board, combo[0])
