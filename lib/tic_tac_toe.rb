@@ -100,16 +100,27 @@ def over?(board)
 end 
 
 def winner(board)
-  if winning_combo = won?(board)
-    board[winning_combo.first]
+  index = []
+  index = won?
+  if index == false 
+    return nil 
+  else 
+    if board[index[0]] == "X"
+      return "X"
+    else 
+      return "O"
+    end 
   end 
 end
 
 def play(board)
-  turn(board) until over?(board)
+  until over? == true 
+    turn 
+  end 
   if won?(board)
     puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
   end 
+end
 end 
