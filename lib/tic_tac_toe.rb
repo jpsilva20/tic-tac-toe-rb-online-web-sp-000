@@ -47,8 +47,8 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
+  user_input = gets.strip
+  index = input_to_index(user_input)
   if valid_move?(board, index)
     move(board, index, current_player(board))
     display_board(board)
@@ -62,16 +62,11 @@ def position_taken?(board, index)
 end 
 
 def current_player(board)
-  turn_number = turn_count(board)
-  if turn_number % 2 == 0  
-    return "X"
-  else 
-    return "O"
-  end 
+  turn_count(board).even? ? "X" : "O"
 end
 
 def turn_count(board)
-  board.count {|token| token == "X" or token == "O"
+  board.count {|token| token == "X" or token == "O"}
 end 
 
 
