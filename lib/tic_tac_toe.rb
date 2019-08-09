@@ -70,8 +70,8 @@ def turn_count(board)
 end 
 
 
-def move(board, index, character)
-  board[index] = character
+def move(board, index, player)
+  board[index] = player
 end 
 
 def winner(board)
