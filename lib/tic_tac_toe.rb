@@ -31,7 +31,7 @@ def won?(board)
 end 
 
 def full?(board)
-  board.all? {|index| index == "X" or index == "O"}
+  board.all? {|token| index == "X" or index == "O"}
 end
 
 def draw?(board)
