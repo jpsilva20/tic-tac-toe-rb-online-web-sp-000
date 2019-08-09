@@ -91,17 +91,9 @@ def over?(board)
 end 
 
 def winner(board)
-  index = []
-  index = won?
-  if index == false 
-    return nil 
-  else 
-    if board[index[0]] == "X"
-      return "X"
-    else 
-      return "O"
-    end 
-  end 
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
 end
 
 def play(board)
