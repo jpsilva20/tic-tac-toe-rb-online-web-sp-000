@@ -38,11 +38,11 @@ def draw?(board)
 end 
 
 def over?(board)
-  won?(board) or draw?(board) or full?(board)
+  won?(board) or draw?(board)
 end 
 
-def input_to_index(input)
-  input.to_i - 1
+def input_to_index(user_input)
+  user_input.to_i - 1
 end 
 
 def turn(board)
