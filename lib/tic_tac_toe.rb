@@ -66,9 +66,9 @@ def won?
     index_1 = win_combo[1]
     index_2 = win_combo[2]
 
-    position_1 = @board[index_0]
-    position_2 = @board[index_1]
-    position_3 = @board[index_2]
+    position_1 = board[index_0]
+    position_2 = board[index_1]
+    position_3 = board[index_2]
 
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
       return win_combo
@@ -80,28 +80,24 @@ def won?
 end
 
 def full?(board)
-  board.all? {|token| token == "X" or token == "O"}
+  board.all? {|index| index == "X" or index == "O"}
 end
 
 def draw?(board)
-  !won?(board) && full?(board)
+  if !won?(board) && full?(board)
+    return true 
+  else 
+    return false 
+  end 
 end 
 
 def over?(board)
-  won?(board) or draw?(board)
+  if won?(board) or draw?(board)
+    return true 
+  else 
+    return false
+  end 
 end 
-
-
-
-
-
-
-
-
-
-
-
-
 
 def winner(board)
   if winning_combo = won?(board)
